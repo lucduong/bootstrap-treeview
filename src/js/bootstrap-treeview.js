@@ -597,10 +597,14 @@
           classList.push(_this.options.uncheckedIcon);
         }
 
-        treeItem
-          .append($(_this.template.icon)
-            .addClass(classList.join(' '))
-          );
+        if (node.root && _this.options.hideRootCheckBox) {
+          treeItem.append($(_this.template.icon));
+        } else {
+          treeItem
+            .append($(_this.template.icon)
+              .addClass(classList.join(' '))
+            );
+        }
       }
 
       // Add text
