@@ -450,6 +450,8 @@
       }
       if (allChildSameState) {
         this.setCheckedState(parentNode, nodeState, options);
+      } else {
+        this.setCheckedState(parentNode, false, options);
       }
     }
   };
