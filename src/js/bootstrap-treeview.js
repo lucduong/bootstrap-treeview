@@ -430,13 +430,14 @@
   Tree.prototype.toggleCheckedState = function (node, options) {
     if (!node) return;
     var nodeState = !node.state.checked;
-    this.setCheckedState(node, nodeState, options);
 
     if (node.nodes && options.checkChildren) {
       for (var i = 0; i < node.nodes.length; i++) {
         this.setCheckedState(node.nodes[i], nodeState, options);
       }
     }
+
+    this.setCheckedState(node, nodeState, options);
 
     if (node.parentId) {
       var parentNode = this.nodes[node.parentId];
