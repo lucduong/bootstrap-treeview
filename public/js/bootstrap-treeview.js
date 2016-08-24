@@ -654,6 +654,7 @@
 
     var color = node.color;
     var backColor = node.backColor;
+    var fontWeight = node.fontWeight;
 
     if (this.options.highlightSelected && node.state.selected) {
       if (this.options.selectedColor) {
@@ -674,7 +675,8 @@
     }
 
     return 'color:' + color +
-      ';background-color:' + backColor + ';';
+      ';background-color:' + backColor +
+      ';font-weight:' + fontWeight + ';';
   };
 
   // Add inline style into head
